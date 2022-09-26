@@ -17,8 +17,7 @@ import kotlinx.android.synthetic.main.fragment_gallery.*
 class GalleryFragment : Fragment() {
 
 private var _binding: FragmentGalleryBinding? = null
-  // This property is only valid between onCreateView and
-  // onDestroyView.
+
   private val binding get() = _binding!!
 
   override fun onCreateView(
@@ -42,28 +41,7 @@ private var _binding: FragmentGalleryBinding? = null
 
     override fun onStart() {
         super.onStart()
-        // Toast.makeText(activity, "fragments onStart method", Toast.LENGTH_LONG).show()
-
-        /*val handler = Handler()
-        val runnable = Runnable {
-            Toast.makeText(context, "Woop Woop", Toast.LENGTH_LONG).show()
-        }
-
-        watchedText.addTextChangedListener(object: TextWatcher {
-            override fun afterTextChanged(p0: Editable?) {
-                handler.removeCallbacks(runnable)
-                handler.postDelayed(runnable, 5000)
-            }
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
-
-        })*/
-
-
+   
         watchedText.addTextChangedListener(object : TextWatcher {
 
             override fun afterTextChanged(s: Editable) {
@@ -77,18 +55,9 @@ private var _binding: FragmentGalleryBinding? = null
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 Toast.makeText(context, s , Toast.LENGTH_SHORT).show()
-
-                // tvSample.setText("Text in EditText : "+s)
-                // textView4.setText("Text in EditText : "+s)
-
             }
         })
-
-
-
     }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()
