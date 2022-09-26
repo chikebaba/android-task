@@ -8,25 +8,24 @@
 
     <TextView
         android:id="@+id/text_gallery"
-        android:layout_width="392dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/but_height"
+        android:layout_marginStart="@dimen/but_marginStart"
+        android:layout_marginTop="@dimen/but_marginTop"
+        android:layout_marginEnd="@dimen/but_marginEnd"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="@dimen/but_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+         />
 
 
     <EditText
         android:id="@+id/watchedText"
-        android:layout_width="387dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/but_height"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
