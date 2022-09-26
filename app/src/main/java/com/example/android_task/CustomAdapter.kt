@@ -36,16 +36,5 @@ internal class CustomAdapter(private var itemsList: List<String>) :
                 show()
             }
         }
-
-
-
     }
-
-
-
-    override fun getItemCount(): Int {
-        return itemsList.size
-    }
-
-
 }
