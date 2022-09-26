@@ -44,8 +44,7 @@ private var _binding: FragmentGalleryBinding? = null
    
         watchedText.addTextChangedListener(object : TextWatcher {
 
-            override fun afterTextChanged(s: Editable) {
-                // textView4.setText("Text in EditText : "+s)
+            override fun afterTextChanged(s: Editable) {  
             }
 
             override fun beforeTextChanged(s: CharSequence, start: Int,
