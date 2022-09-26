@@ -23,9 +23,6 @@ internal class CustomAdapter(private var itemsList: List<String>) :
         return MyViewHolder(itemView)
     }
 
-
-
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         val item = itemsList[position]
