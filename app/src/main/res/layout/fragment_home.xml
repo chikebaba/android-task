@@ -8,25 +8,24 @@
 
     <TextView
         android:id="@+id/text_home"
-        android:layout_width="391dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/but_height"
+        android:layout_marginStart="@dimen/but_marginStart"
+        android:layout_marginTop="@dimen/but_marginTop"
+        android:layout_marginEnd="@dimen/but_marginEnd"
         android:gravity="center_vertical|center_horizontal"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="@dimen/but_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.011" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="359dp"
-        android:layout_height="49dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/but_height"
         android:gravity="center_vertical|center_horizontal"
         android:text="Hello"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,8 +36,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="359dp"
-        android:layout_height="49dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/but_height"
         android:gravity="center_vertical|center_horizontal"
         android:text="Andersen"
         app:layout_constraintBottom_toBottomOf="parent"
