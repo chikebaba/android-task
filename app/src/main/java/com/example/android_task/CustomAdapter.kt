@@ -30,32 +30,15 @@ internal class CustomAdapter(private var itemsList: List<String>) :
 
         val item = itemsList[position]
         holder.itemTextView.text = item
-
-        //  holder.itemTextView.setText(itemsList.get(position))
-
-        holder.itemTextView.setOnClickListener {    /* (holder.itemTextView.setTextColor(Color.GREEN)) */
-
-
-
+        holder.itemTextView.setOnClickListener {  
             val builder = AlertDialog.Builder(it.context)
-
-            /*  val positiveButtonClick = { dialog: DialogInterface, which: Int ->
-                  Toast.makeText(applicationContext,
-                      android.R.string.yes, Toast.LENGTH_SHORT).show()
-              }*/
-
             with(builder)
             {
                 setTitle("Picked item")
                 setMessage("Item " + itemsList[position] )
-                //  setPositiveButton("OK", DialogInterface.OnClickListener(function = positiveButtonClick))
-                //  setNegativeButton(android.R.string.no, negativeButtonClick)
-                //   setNeutralButton("Maybe", neutralButtonClick)
                 show()
             }
-
-
-        } // click event
+        }
 
 
 
