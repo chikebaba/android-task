@@ -27,8 +27,11 @@ internal class CustomAdapter(private var itemsList: List<String>) :
 
         val item = itemsList[position]
         holder.itemTextView.text = item
-        holder.itemTextView.setOnClickListener {  
+
+        holder.itemTextView.setOnClickListener {
+
             val builder = AlertDialog.Builder(it.context)
+
             with(builder)
             {
                 setTitle("Picked item")
@@ -36,5 +39,9 @@ internal class CustomAdapter(private var itemsList: List<String>) :
                 show()
             }
         }
+    }
+
+    override fun getItemCount(): Int {
+        return itemsList.size
     }
 }
