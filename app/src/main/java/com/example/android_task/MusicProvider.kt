@@ -6,7 +6,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.net.Uri
 
-
 class MusicProvider : ContentProvider() {
     companion object {
         val PROVIDER_NAME = "com.example.android_task/MusicProvider"
@@ -21,7 +20,6 @@ class MusicProvider : ContentProvider() {
     }
 
     lateinit var db: SQLiteDatabase
-
 
     override fun onCreate(): Boolean {
         var helper = MusicHelper(getContext())
