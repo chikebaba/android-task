@@ -14,6 +14,10 @@ internal class MusicArtistAdapter(private var itemsList: List<String>) :
     internal inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var itemTextViewSong: TextView = view.findViewById(R.id.itemTextViewSong)
     }
+    
+    companion object {
+        val intentBr = Intent("PICK_MUSIC")
+    }
 
     @NonNull
     override fun onCreateViewHolder(
@@ -40,13 +44,15 @@ internal class MusicArtistAdapter(private var itemsList: List<String>) :
             val context = holder.itemTextViewSong.context
             val intent = Intent(context, MusicMainActivity::class.java)
             val arr = itemsList[position].split(" ")
-            intent.putExtra("song", itemsList[position])
-            intent.putExtra("songPath", arr.get(3))
-            intent.putExtra("songGenre", arr.get(2))
-            intent.putExtra("songArtist", arr.get(1))
-            intent.putExtra("songName", arr.get(0))
+            intent.apply {
+                putExtra("song", itemsList[position])
+                putExtra("songPath", arr.get(3))
+                putExtra("songGenre", arr.get(2))
+                putExtra("songArtist", arr.get(1))
+                putExtra("songName", arr.get(0))
+            }
 
-            val intentBr = Intent("PICK_MUSIC")
+           
             intentBr.setAction("PICK_MUSIC")
             context.sendBroadcast(intentBr)
 
