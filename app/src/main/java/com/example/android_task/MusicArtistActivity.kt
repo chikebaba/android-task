@@ -107,6 +107,7 @@ class MusicArtistActivity : AppCompatActivity() {
             null,
             null
         )
+        rs.let {
         if (rs!!.moveToFirst()) {
             do {
                 if (rs!!.getString(2) == artist)
@@ -115,7 +116,7 @@ class MusicArtistActivity : AppCompatActivity() {
                             3
                         ) + " " + rs!!.getString(4)
                     )
-            } while (rs!!.moveToNext())
+            } while (rs!!.moveToNext())}
         }
         musicArtistAdapter.notifyDataSetChanged()
     }
@@ -134,6 +135,7 @@ class MusicArtistActivity : AppCompatActivity() {
             null,
             null
         )
+        rs.let {
         if (rs!!.moveToFirst()) {
             do {
                 if (rs!!.getString(3) == genre)
@@ -142,7 +144,7 @@ class MusicArtistActivity : AppCompatActivity() {
                             3
                         ) + " " + rs!!.getString(4)
                     )
-            } while (rs!!.moveToNext())
+            } while (rs!!.moveToNext())}
         }
         musicArtistAdapter.notifyDataSetChanged()
     }
