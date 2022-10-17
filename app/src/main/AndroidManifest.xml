@@ -44,21 +44,12 @@
                 <action android:name="PICK_MUSIC" />
             </intent-filter>
         </receiver>
-
-
-
         <provider
             android:authorities="com.example.android_task"
             android:name=".MusicProvider"
             android:exported="true"
             android:grantUriPermissions="true"
             >
-
         </provider>
-
-
-
-
     </application>
-
 </manifest>
