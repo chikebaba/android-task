@@ -21,12 +21,10 @@ class ViewPager : Fragment() {
     private lateinit var viewPager: ViewPager
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_view_pager, container, false)
-    }
+     inflater: LayoutInflater,
+     container: ViewGroup?,
+     savedInstanceState: Bundle?
+ ) =  inflater.inflate(R.layout.fragment_view_pager, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         demoCollectionPagerAdapter = DemoCollectionPagerAdapter(childFragmentManager)
