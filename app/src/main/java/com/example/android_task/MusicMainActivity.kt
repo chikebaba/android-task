@@ -24,8 +24,8 @@ class MusicMainActivity : AppCompatActivity() {
         binding = ActivityMusicMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val intentFilter = IntentFilter("PICK_MUSIC")
-        intentFilter.addAction("PICK_MUSIC")
+        val intentFilter = IntentFilter(resources.getString(R.string.action_br_receiver))
+        intentFilter.addAction(resources.getString(R.string.action_br_receiver))
         LocalBroadcastManager.getInstance(this).registerReceiver(receiver, intentFilter)
 
         val button_artist = binding.buttonArtist
