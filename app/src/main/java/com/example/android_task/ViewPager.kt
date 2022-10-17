@@ -35,10 +35,8 @@ class ViewPager : Fragment() {
         adapter.addFragment(SlideshowFragment(), "Task 3")
         viewPager.adapter = adapter
         viewPager.tab_layout.setupWithViewPager(viewPager.pager)
-
     }
 }
-
 
 class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
