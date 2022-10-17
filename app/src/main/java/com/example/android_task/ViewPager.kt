@@ -19,7 +19,6 @@ class ViewPager : Fragment() {
 
     private lateinit var demoCollectionPagerAdapter: DemoCollectionPagerAdapter
     private lateinit var viewPager: ViewPager
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,17 +36,12 @@ class ViewPager : Fragment() {
         adapter.addFragment(SlideshowFragment(), "Task 3")
         viewPager.adapter = adapter
         viewPager.tab_layout.setupWithViewPager(viewPager.pager)
-
     }
 }
 
-
 class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
-
     override fun getItem(position: Int) = mFrgmentList[position]
-
     override fun getPageTitle(position: Int) = mFrgmentTitleList[position]
-
     private val mFrgmentList = ArrayList<Fragment>()
     private val mFrgmentTitleList = ArrayList<String>()
     override fun getCount() = mFrgmentList.size
@@ -56,6 +50,3 @@ class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapte
         mFrgmentTitleList.add(title)
     }
 }
-
-
-
