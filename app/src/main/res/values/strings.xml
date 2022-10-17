@@ -13,6 +13,7 @@
     <string name="task1">Task 1</string>
     <string name="task2">Task 2 (Music player)</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_br_receiver">PICK_MUSIC</string>
     <string-array name="Songs">
         <item>pop</item>
         <item>rock</item>
