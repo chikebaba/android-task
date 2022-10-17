@@ -19,10 +19,7 @@ class MusicHelper(context: Context?) : SQLiteOpenHelper (context, "MDB" , null, 
         db?.execSQL("INSERT INTO MUSICTABLE(NAME,ARTIST,GENRE,PATH) VALUES('ceur','thomas','epic','thomas_barrandon_le_feu_dans_leur_coeur')")
         db?.execSQL("INSERT INTO MUSICTABLE(NAME,ARTIST,GENRE,PATH) VALUES('main_menu','forza_horizon','epic','title_song_forza_horizon_5_soundtrack')")
     }
-
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         TODO("Not yet implemented")
     }
-
-
 }
