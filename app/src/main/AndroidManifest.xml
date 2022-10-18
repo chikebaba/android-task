@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.android_task">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +18,15 @@
         android:theme="@style/Theme.Androidtask"
         tools:targetApi="33">
         <activity
+            android:name=".DBTestAct"
+            android:exported="false" />
+        <activity
+            android:name=".MusicArtistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MusicMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/title_activity_main"
@@ -24,6 +37,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <receiver android:name=".MusicMainActivity$MusicReceiver"  android:exported="true"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="PICK_MUSIC" />
+            </intent-filter>
+        </receiver>
+        <provider
+            android:authorities="com.example.android_task"
+            android:name=".MusicProvider"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            >
+        </provider>
+    </application>
 </manifest>

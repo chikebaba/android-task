@@ -11,5 +11,20 @@
     <string name="menu_gallery">Second fragment</string>
     <string name="menu_slideshow">Third fragment</string>
     <string name="task1">Task 1</string>
+    <string name="task2">Task 2 (Music player)</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_br_receiver">PICK_MUSIC</string>
+    <string-array name="Songs">
+        <item>pop</item>
+        <item>rock</item>
+        <item>epic</item>
+    </string-array>
+    <string-array name="Artists">
+        <item>zimmer</item>
+        <item>durak</item>
+        <item>flooaw</item>
+        <item>score</item>
+        <item>thomas</item>
+        <item>forza</item>
+    </string-array>
 </resources>

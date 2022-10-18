@@ -10,4 +10,9 @@
         android:name="com.example.android_task.ViewPager"
         android:label="ViewPager"
         tools:layout="@layout/fragment_view_pager"/>
+    <activity
+        android:id="@+id/nav_music"
+        android:name="com.example.android_task.MusicMainActivity"
+        android:label="activity_music_main"
+        tools:layout="@layout/activity_music_main" />
 </navigation>
