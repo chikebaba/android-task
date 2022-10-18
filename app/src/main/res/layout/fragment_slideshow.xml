@@ -10,15 +10,11 @@
         android:id="@+id/text_slideshow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/but_marginStart"
-        android:layout_marginTop="@dimen/but_marginTop"
-        android:layout_marginEnd="@dimen/but_marginEnd"
         android:textAlignment="center"
         android:textSize="@dimen/but_textSize"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="233dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
