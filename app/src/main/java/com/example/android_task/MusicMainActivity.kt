@@ -74,7 +74,6 @@ class MusicMainActivity : AppCompatActivity() {
     inner class MusicReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             var songName = intent?.getStringExtra("song")
-            textView11.setText(songName)
         }
     }
 }
