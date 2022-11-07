@@ -15,4 +15,9 @@
         android:name="com.example.android_task.MusicMainActivity"
         android:label="activity_music_main"
         tools:layout="@layout/activity_music_main" />
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="com.example.android_task.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
 </navigation>
