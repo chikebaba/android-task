@@ -10,4 +10,5 @@
     <dimen name="but_marginTop">8dp</dimen>
     <dimen name="but_marginEnd">8dp</dimen>
     <dimen name="but_textSize">20sp</dimen>
+    <dimen name="fan_dimen_radius">200sp</dimen>
 </resources>

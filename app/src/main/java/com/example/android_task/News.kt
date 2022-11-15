@@ -4,6 +4,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
+@KotlinBuilder
 @Parcelize
 data class News(
 
@@ -23,5 +24,8 @@ data class News(
     val publishedAt: String?
 
 ) : Parcelable {
-    constructor() : this("", "", "", "", "")
+     object NewsMapper {
+            fun from(newsResponse : NewsResponse, position : Int) =
+                News(newsResponse.news[position].author,newsResponse.news[position].title,newsResponse.news[position].description,newsResponse.news[position].urlToImage,newsResponse.news[position].publishedAt)
+        }
 }
