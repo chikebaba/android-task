@@ -27,4 +27,11 @@
         <item>thomas</item>
         <item>forza</item>
     </string-array>
+    <string-array name="NewsThemes">
+        <item>software</item>
+        <item>science</item>
+        <item>general</item>
+        <item>music</item>
+        <item>film</item>
+    </string-array>
 </resources>
