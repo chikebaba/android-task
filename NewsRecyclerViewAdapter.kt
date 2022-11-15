@@ -39,11 +39,14 @@ class NewsRecyclerViewAdapter(private val news: List<News>) :
             val context = holder.itemView.context
 
             val bundle = Bundle()
-            bundle.putString("image", news[position].urlToImage)
-            bundle.putString("description", news[position].description)
-            bundle.putString("title", news[position].title)
-            bundle.putString("publishedAt", news[position].publishedAt)
-            bundle.putString("author", news[position].author)
+            bundle.apply {
+            putString("image", news[position].urlToImage)
+            putString("description", news[position].description)
+            putString("title", news[position].title)
+            putString("publishedAt", news[position].publishedAt)
+            putString("author", news[position].author)
+            }
+
 
             val fragInfo = DetailedNewsDescriptionFragment()
             fragInfo.arguments = bundle;
