@@ -1,4 +1,4 @@
-package com.example.android_task
+package com.example.android_task.music.view
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -8,9 +8,9 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.example.android_task.R
 import com.example.android_task.databinding.ActivityMusicMainBinding
 import kotlinx.android.synthetic.main.activity_music_main.*
 

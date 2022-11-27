@@ -4,16 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.android_task.databinding.FragmentSlideshowBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android_task.CustomAdapter
+import com.example.android_task.firsttask.view.CustomAdapter
 import com.example.android_task.R
-import com.example.android_task.databinding.FragmentHomeBinding
-import kotlinx.android.synthetic.main.item.*
 import kotlinx.android.synthetic.main.fragment_slideshow.*
 
 

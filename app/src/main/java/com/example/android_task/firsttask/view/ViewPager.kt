@@ -1,15 +1,12 @@
-package com.example.android_task
+package com.example.android_task.firsttask.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.example.android_task.databinding.ActivityMainBinding
+import com.example.android_task.R
 import com.example.android_task.ui.gallery.GalleryFragment
 import com.example.android_task.ui.home.HomeFragment
 import com.example.android_task.ui.slideshow.SlideshowFragment

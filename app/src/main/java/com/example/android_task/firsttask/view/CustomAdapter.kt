@@ -1,15 +1,13 @@
-package com.example.android_task
+package com.example.android_task.firsttask.view
 
 import android.app.AlertDialog
-import android.content.DialogInterface
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android_task.R
 
 internal class CustomAdapter(private var itemsList: List<String>) : RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
     internal inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {

@@ -1,4 +1,4 @@
-package com.example.android_task
+package com.example.android_task.news.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +10,12 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.example.android_task.news.presenter.NewsRecyclerViewAdapter
+import com.example.android_task.R
+import com.example.android_task.news.model.News
+import com.example.android_task.news.model.NewsApiInterface
+import com.example.android_task.news.model.NewsApiService
+import com.example.android_task.news.model.NewsResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

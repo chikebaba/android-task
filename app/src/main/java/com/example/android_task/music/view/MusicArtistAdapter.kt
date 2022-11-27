@@ -1,4 +1,4 @@
-package com.example.android_task
+package com.example.android_task.music.view
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android_task.R
 
 internal class MusicArtistAdapter(private var itemsList: List<String>) :
     RecyclerView.Adapter<MusicArtistAdapter.MyViewHolder>() {
@@ -23,13 +24,13 @@ internal class MusicArtistAdapter(private var itemsList: List<String>) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): MusicArtistAdapter.MyViewHolder {
+    ): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.song_item, parent, false)
         return MyViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: MusicArtistAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = itemsList[position]
         holder.itemTextViewSong.text = item
         holder.itemTextViewSong.setOnClickListener {

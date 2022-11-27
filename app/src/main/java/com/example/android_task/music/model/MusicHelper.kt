@@ -1,4 +1,4 @@
-package com.example.android_task
+package com.example.android_task.music.model
 
 
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.example.android_task
+package com.example.android_task.music.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android_task.R
+import com.example.android_task.music.model.MusicProvider
 import kotlinx.android.synthetic.main.activity_music_artist.*
 
 class MusicArtistActivity : AppCompatActivity() {
