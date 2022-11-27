@@ -7,7 +7,7 @@
     tools:context=".CustomCircleFragment">
 
 
-    <com.example.android_task.customviewtask.model.DialView
+    <com.example.android_task.customviewtask.view.DialView
         android:id="@+id/dialView"
         android:layout_width="@dimen/fan_dimen_radius"
         android:layout_height="@dimen/fan_dimen_radius"

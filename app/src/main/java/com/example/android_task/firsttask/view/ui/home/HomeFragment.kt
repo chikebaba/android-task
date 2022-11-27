@@ -1,4 +1,4 @@
-package com.example.android_task.ui.home
+package com.example.android_task.firsttask.view.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

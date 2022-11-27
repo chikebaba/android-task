@@ -12,10 +12,15 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.android_task.news.presenter.NewsRecyclerViewAdapter
 import com.example.android_task.R
+import com.example.android_task.music.presenter.MusicMainContract
+import com.example.android_task.music.presenter.MusicMainPresenter
 import com.example.android_task.news.model.News
 import com.example.android_task.news.model.NewsApiInterface
 import com.example.android_task.news.model.NewsApiService
 import com.example.android_task.news.model.NewsResponse
+import com.example.android_task.news.presenter.NewsFragmentMainContract
+import com.example.android_task.news.presenter.NewsFragmentMainPresenter
+import moxy.presenter.InjectPresenter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,10 +30,20 @@ class NewsFragment : Fragment() {
     private var itemsList = ArrayList<String>()
     private lateinit var newsRecyclerViewAdapter: NewsRecyclerViewAdapter
 
+    lateinit var newsFragmentMainContract: NewsFragmentMainPresenter//NewsFragmentMainContract
+
+    private fun initializePresenter() {
+
+        @InjectPresenter
+        newsFragmentMainContract = NewsFragmentMainPresenter()
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
+        initializePresenter()
         return inflater.inflate(R.layout.fragment_news, container, false)
     }
 
@@ -61,23 +76,23 @@ class NewsFragment : Fragment() {
 
                     when (newsThemes[position]) {
 
-                        "software" -> getNews { news: List<News> ->
+                        "software" -> newsFragmentMainContract.getNews { news: List<News> ->
                             news_recyclerview.adapter = NewsRecyclerViewAdapter(news)
                         }
 
-                        "film" -> getNewsFilm { news: List<News> ->
+                        "film" -> newsFragmentMainContract.getNewsFilm { news: List<News> ->
                             news_recyclerview.adapter = NewsRecyclerViewAdapter(news)
                         }
 
-                        "music" -> getNewsMusic { news: List<News> ->
+                        "music" -> newsFragmentMainContract.getNewsMusic { news: List<News> ->
                             news_recyclerview.adapter = NewsRecyclerViewAdapter(news)
                         }
 
-                        "science" -> getNewsScience { news: List<News> ->
+                        "science" -> newsFragmentMainContract.getNewsScience { news: List<News> ->
                             news_recyclerview.adapter = NewsRecyclerViewAdapter(news)
                         }
 
-                        "general" -> getNewsSoftware { news: List<News> ->
+                        "general" -> newsFragmentMainContract.getNewsSoftware { news: List<News> ->
                             news_recyclerview.adapter = NewsRecyclerViewAdapter(news)
                         }
 
@@ -90,66 +105,5 @@ class NewsFragment : Fragment() {
                 }
             }
         }
-    }
-
-
-    private fun getNews(callback: (List<News>) -> Unit) {
-        val apiService = NewsApiService.getInstance().create(NewsApiInterface::class.java)
-        apiService.getNews().enqueue(object : Callback<NewsResponse> {
-            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-            }
-
-            override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
-                return callback(response.body()!!.news)
-            }
-        })
-    }
-
-    private fun getNewsMusic(callback: (List<News>) -> Unit) {
-        val apiService = NewsApiService.getInstance().create(NewsApiInterface::class.java)
-        apiService.getNewsMusic().enqueue(object : Callback<NewsResponse> {
-            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-            }
-
-            override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
-                return callback(response.body()!!.news)
-            }
-        })
-    }
-
-    private fun getNewsSoftware(callback: (List<News>) -> Unit) {
-        val apiService = NewsApiService.getInstance().create(NewsApiInterface::class.java)
-        apiService.getNewsSoftware().enqueue(object : Callback<NewsResponse> {
-            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-            }
-
-            override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
-                return callback(response.body()!!.news)
-            }
-        })
-    }
-
-    private fun getNewsFilm(callback: (List<News>) -> Unit) {
-        val apiService = NewsApiService.getInstance().create(NewsApiInterface::class.java)
-        apiService.getNewsFilm().enqueue(object : Callback<NewsResponse> {
-            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-            }
-
-            override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
-                return callback(response.body()!!.news)
-            }
-        })
-    }
-
-    private fun getNewsScience(callback: (List<News>) -> Unit) {
-        val apiService = NewsApiService.getInstance().create(NewsApiInterface::class.java)
-        apiService.getNewsScience().enqueue(object : Callback<NewsResponse> {
-            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-            }
-
-            override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
-                return callback(response.body()!!.news)
-            }
-        })
     }
 }

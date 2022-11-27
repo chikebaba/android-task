@@ -1,4 +1,4 @@
-package com.example.android_task.ui.gallery
+package com.example.android_task.firsttask.view.ui.gallery
 
 import android.os.Bundle
 import android.text.Editable

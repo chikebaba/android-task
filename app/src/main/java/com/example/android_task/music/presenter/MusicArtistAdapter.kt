@@ -1,4 +1,4 @@
-package com.example.android_task.music.view
+package com.example.android_task.music.presenter
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -9,10 +9,11 @@ import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_task.R
+import com.example.android_task.music.view.MusicMainActivity
 
-internal class MusicArtistAdapter(private var itemsList: List<String>) :
+ class MusicArtistAdapter(private var itemsList: List<String>) :
     RecyclerView.Adapter<MusicArtistAdapter.MyViewHolder>() {
-    internal inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var itemTextViewSong: TextView = view.findViewById(R.id.itemTextViewSong)
     }
     

@@ -1,4 +1,4 @@
-package com.example.android_task.ui.slideshow
+package com.example.android_task.firsttask.view.ui.slideshow
 
 import android.os.Bundle
 import android.view.LayoutInflater

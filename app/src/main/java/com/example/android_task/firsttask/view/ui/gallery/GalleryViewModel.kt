@@ -1,4 +1,4 @@
-package com.example.android_task.ui.gallery
+package com.example.android_task.firsttask.view.ui.gallery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

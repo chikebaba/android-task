@@ -9,16 +9,31 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_task.R
 import com.example.android_task.music.model.MusicProvider
+import com.example.android_task.music.presenter.MusicArtistAdapter
+import com.example.android_task.music.presenter.MusicMainContract
+import com.example.android_task.music.presenter.MusicMainPresenter
 import kotlinx.android.synthetic.main.activity_music_artist.*
+import com.example.android_task.databinding.ActivityMusicArtistBinding
+import moxy.presenter.InjectPresenter
 
 class MusicArtistActivity : AppCompatActivity() {
 
     private val itemsList = ArrayList<String>()
     private lateinit var musicArtistAdapter: MusicArtistAdapter
+    private lateinit var binding: ActivityMusicArtistBinding
+
+    lateinit var musicMainContract: MusicMainPresenter//MusicMainContract
+
+    private fun initializePresenter() {
+        @InjectPresenter
+        musicMainContract = MusicMainPresenter()
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        binding = ActivityMusicArtistBinding.inflate(layoutInflater)
+        initializePresenter()
         var rs = contentResolver.query(
             MusicProvider.CONTENT_URI,
             arrayOf(MusicProvider._ID, MusicProvider.NAME, MusicProvider.ARTIST),
@@ -57,8 +72,7 @@ class MusicArtistActivity : AppCompatActivity() {
                                 "" + artists[position], Toast.LENGTH_SHORT
                     ).show()
                     itemsList.clear()
-                    loadSongsArtist(artists[position])
-
+                    musicMainContract.loadSongsArtist(artists[position],musicArtistAdapter,contentResolver,itemsList)
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -86,70 +100,12 @@ class MusicArtistActivity : AppCompatActivity() {
                                 "" + songs[position], Toast.LENGTH_SHORT
                     ).show()
                     itemsList.clear()
-                    loadSongsGenre(songs[position])
-                }
+                    musicMainContract.loadSongsGenre(songs[position],musicArtistAdapter,contentResolver,itemsList)
 
+                }
                 override fun onNothingSelected(parent: AdapterView<*>) {
                 }
             }
         }
     }
-
-    private fun loadSongsArtist(artist: String) {
-        var rs = contentResolver.query(
-            MusicProvider.CONTENT_URI,
-            arrayOf(
-                MusicProvider._ID,
-                MusicProvider.NAME,
-                MusicProvider.ARTIST,
-                MusicProvider.GENRE,
-                MusicProvider.PATH
-            ),
-            null,
-            null,
-            null
-        )
-        rs.let {
-        if (rs!!.moveToFirst()) {
-            do {
-                if (rs!!.getString(2) == artist)
-                    itemsList.add(
-                        rs!!.getString(1) + " " + rs!!.getString(2) + " " + rs!!.getString(
-                            3
-                        ) + " " + rs!!.getString(4)
-                    )
-            } while (rs!!.moveToNext())}
-        }
-        musicArtistAdapter.notifyDataSetChanged()
-    }
-
-    private fun loadSongsGenre(genre: String) {
-        var rs = contentResolver.query(
-            MusicProvider.CONTENT_URI,
-            arrayOf(
-                MusicProvider._ID,
-                MusicProvider.NAME,
-                MusicProvider.ARTIST,
-                MusicProvider.GENRE,
-                MusicProvider.PATH
-            ),
-            null,
-            null,
-            null
-        )
-        rs.let {
-        if (rs!!.moveToFirst()) {
-            do {
-                if (rs!!.getString(3) == genre)
-                    itemsList.add(
-                        rs!!.getString(1) + " " + rs!!.getString(2) + " " + rs!!.getString(
-                            3
-                        ) + " " + rs!!.getString(4)
-                    )
-            } while (rs!!.moveToNext())}
-        }
-        musicArtistAdapter.notifyDataSetChanged()
-    }
 }
-
-

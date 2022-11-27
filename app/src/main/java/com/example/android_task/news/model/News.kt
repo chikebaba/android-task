@@ -5,7 +5,6 @@ import com.github.pozo.KotlinBuilder
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@KotlinBuilder
 @Parcelize
 data class News(
 

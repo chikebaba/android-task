@@ -1,4 +1,4 @@
-package com.example.android_task.customviewtask.model
+package com.example.android_task.customviewtask.view
 
 import android.content.Context
 import android.graphics.*

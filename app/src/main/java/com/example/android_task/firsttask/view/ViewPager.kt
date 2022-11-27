@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.ViewPager
 import com.example.android_task.R
-import com.example.android_task.ui.gallery.GalleryFragment
-import com.example.android_task.ui.home.HomeFragment
-import com.example.android_task.ui.slideshow.SlideshowFragment
+import com.example.android_task.firsttask.view.ui.gallery.GalleryFragment
+import com.example.android_task.firsttask.view.ui.home.HomeFragment
+import com.example.android_task.firsttask.view.ui.slideshow.SlideshowFragment
 import kotlinx.android.synthetic.main.fragment_view_pager.view.*
 
 class ViewPager : Fragment() {

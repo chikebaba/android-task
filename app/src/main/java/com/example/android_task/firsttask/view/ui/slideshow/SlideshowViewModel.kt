@@ -1,13 +1,13 @@
-package com.example.android_task.ui.home
+package com.example.android_task.firsttask.view.ui.slideshow
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class SlideshowViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is fragment with 2 textview"
+        value = "This is third fragment with Recycler view"
     }
     val text: LiveData<String> = _text
 }

@@ -12,7 +12,7 @@ import android.widget.TextView
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.android_task.R
 import com.example.android_task.databinding.ActivityMusicMainBinding
-import kotlinx.android.synthetic.main.activity_music_main.*
+
 
 class MusicMainActivity : AppCompatActivity() {
     var mMediaPlayer: MediaPlayer? = null
@@ -34,9 +34,11 @@ class MusicMainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val textViewSongName: TextView = findViewById<TextView>(R.id.textViewSongName)
-        val textViewGenre: TextView = findViewById<TextView>(R.id.textViewGenre)
-        val textViewArtist: TextView = findViewById<TextView>(R.id.textViewArtist)
+        val textViewSongName: TextView = binding.textViewSongName
+        val textViewGenre: TextView = binding.textViewGenre
+        val textViewArtist: TextView = binding.textViewArtist
+
+        val button_play = binding.buttonPlay
 
         val songName = intent?.getStringExtra("songName")
         val songArtist = intent?.getStringExtra("songArtist")
