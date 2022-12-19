@@ -26,6 +26,11 @@ data class News(
 ) : Parcelable {
      object NewsMapper {
             fun from(newsResponse : NewsResponse, position : Int) =
-                News(newsResponse.news[position].author,newsResponse.news[position].title,newsResponse.news[position].description,newsResponse.news[position].urlToImage,newsResponse.news[position].publishedAt)
+                News(
+                newsResponse.news[position].author,
+                newsResponse.news[position].title,
+                newsResponse.news[position].description,
+                newsResponse.news[position].urlToImage,
+                newsResponse.news[position].publishedAt)
         }
 }
