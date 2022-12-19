@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/nav_viewpager"
-        android:name="com.example.android_task.ViewPager"
+        android:name="com.example.android_task.firsttask.view.ViewPager"
         android:label="ViewPager"
         tools:layout="@layout/fragment_view_pager"/>
     <activity
         android:id="@+id/nav_music"
-        android:name="com.example.android_task.MusicMainActivity"
+        android:name="com.example.android_task.music.view.MusicMainActivity"
         android:label="activity_music_main"
         tools:layout="@layout/activity_music_main" />
     <fragment
         android:id="@+id/nav_news"
-        android:name="com.example.android_task.NewsFragment"
+        android:name="com.example.android_task.news.view.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/nav_circle"
-        android:name="com.example.android_task.CustomCircleFragment"
+        android:name="com.example.android_task.customviewtask.view.CustomCircleFragment"
         android:label="fragment_circle"
         tools:layout="@layout/fragment_custom_circle" />
     <activity
         android:id="@+id/nav_map"
-        android:name="com.example.android_task.GoogleMapsActivity"
+        android:name="com.example.android_task.googlemaps.view.GoogleMapsActivity"
         android:label="activity_google_maps"
         tools:layout="@layout/activity_google_maps" />
 </navigation>

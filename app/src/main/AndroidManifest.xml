@@ -10,6 +10,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,7 +22,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Androidtask"
         tools:targetApi="33">
-        
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -29,17 +42,17 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
-            android:name=".GoogleMapsActivity"
+            android:name=".googlemaps.view.GoogleMapsActivity"
             android:exported="false"
             android:label="@string/title_activity_google_maps" />
         <activity
-            android:name=".MusicArtistActivity"
+            android:name=".music.view.MusicArtistActivity"
             android:exported="false" />
         <activity
-            android:name=".MusicMainActivity"
+            android:name=".music.view.MusicMainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".firsttask.view.MainActivity"
             android:exported="true"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Androidtask.NoActionBar">
@@ -51,7 +64,7 @@
         </activity>
 
         <receiver
-            android:name=".MusicMainActivity$MusicReceiver"
+            android:name=".music.view.MusicMainActivity$MusicReceiver"
             android:exported="true"
             tools:ignore="Instantiatable">
             <intent-filter>
@@ -60,7 +73,7 @@
         </receiver>
 
         <provider
-            android:name=".MusicProvider"
+            android:name=".music.model.MusicProvider"
             android:authorities="com.example.android_task"
             android:exported="true"
             android:grantUriPermissions="true"></provider>
