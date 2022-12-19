@@ -10,7 +10,11 @@ import moxy.MvpView
 @InjectViewState
 class MusicMainPresenter: MvpPresenter<MusicMainContract>() {
 
-   /* override*/ fun loadSongsArtist(artist: String, musicArtistAdapter: MusicArtistAdapter, contentResolver : ContentResolver,itemsList : ArrayList<String>) {
+fun loadSongsArtist(
+artist: String, 
+musicArtistAdapter: MusicArtistAdapter, 
+contentResolver : ContentResolver,
+itemsList : ArrayList<String>) {
         var rs = contentResolver.query(
             MusicProvider.CONTENT_URI,
             arrayOf(
@@ -38,7 +42,11 @@ class MusicMainPresenter: MvpPresenter<MusicMainContract>() {
         musicArtistAdapter.notifyDataSetChanged()
     }
 
-    /*override*/ fun loadSongsGenre(genre: String, musicArtistAdapter: MusicArtistAdapter, contentResolver : ContentResolver,itemsList : ArrayList<String>) {
+    fun loadSongsGenre(
+       genre: String, 
+       musicArtistAdapter: MusicArtistAdapter, 
+       contentResolver : ContentResolver,
+       itemsList : ArrayList<String>) {
         var rs = contentResolver.query(
             MusicProvider.CONTENT_URI,
             arrayOf(
