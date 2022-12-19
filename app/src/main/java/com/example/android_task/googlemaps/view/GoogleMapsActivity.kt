@@ -63,12 +63,10 @@ class GoogleMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                             var CountryName = "Country Name\n${list[0].countryName}"
                             var Locality = "Locality\n${list[0].locality}"
                             var Address = "Address\n${list[0].getAddressLine(0)}"
-
+                            
+                            for(int i=0;i<5; i++) {
                             placeRandom(googleMap,latitude,longitude)
-                            placeRandom(googleMap,latitude,longitude)
-                            placeRandom(googleMap,latitude,longitude)
-                            placeRandom(googleMap,latitude,longitude)
-                            placeRandom(googleMap,latitude,longitude)
+                            }
                         }
                     }
                 }
