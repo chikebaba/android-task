@@ -1,9 +1,9 @@
 package com.example.android_task.news.presenter
 
-import com.example.android_task.news.model.News
-import com.example.android_task.news.model.NewsApiInterface
-import com.example.android_task.news.model.NewsApiService
-import com.example.android_task.news.model.NewsResponse
+import androidx.room.Room
+import com.example.android_task.news.model.*
+import com.example.android_task.news.viewstate.NewsEvent
+import com.example.android_task.news.viewstate.NewsViewState
 import moxy.InjectViewState
 import moxy.MvpPresenter
 import retrofit2.Call
@@ -12,6 +12,23 @@ import retrofit2.Response
 
 @InjectViewState
 class NewsFragmentMainPresenter : MvpPresenter<NewsFragmentMainContract>() {
+
+    val db = Room.databaseBuilder(
+        applicationContext,
+        NewsDatabase::class.java, "news-database"
+    ).build()
+
+    fun obtainEvent (event : NewsEvent) {
+        when (event) {
+            is NewsEvent.NewsFetch -> {
+                getNews(callback: (List<News>) -> Unit)
+                val newsDao = db.newsDao()
+                newsDao.insertAll(List<News>)
+                val news: List<NewsEntity> = newsDao.getAll()
+            }
+        }
+    }
+
     /*override*/ fun getNews(callback: (List<News>) -> Unit) {
         val apiService = NewsApiService.getInstance().create(NewsApiInterface::class.java)
         apiService.getNews().enqueue(object : Callback<NewsResponse> {
@@ -19,6 +36,7 @@ class NewsFragmentMainPresenter : MvpPresenter<NewsFragmentMainContract>() {
             }
 
             override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
+
                 return callback(response.body()!!.news)
             }
         })
